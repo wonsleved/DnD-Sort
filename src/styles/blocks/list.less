@@ -1,0 +1,39 @@
+@import "../common/colors";
+
+.list {
+  height: 100%;
+  width: 100%;
+  border: 3px solid @white;
+  padding: 40px;
+  min-height: 300px;
+  border-radius: 1px 1px 1px 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    padding: 5px 9px;
+  }
+
+  &__item {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: @yellow;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: @light-blue;
+  }
+}

@@ -1,0 +1,53 @@
+@import "../common/colors";
+
+.list-item {
+  position: relative;
+  color: @blue;
+  font-size: 18px;
+  font-weight: 500;
+  width: 40%;
+  max-height: 100px;
+  border-radius: 2px;
+  margin: 4px;
+  padding: 15px;
+  background-color: @white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &._active {
+    background-color: @yellow;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+
+  &__info {
+    padding-right: 50px;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    outline: none;
+    border: none;
+    border-left: 2px solid @light-blue;
+    background-color: @light-blue;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  &__button:hover {
+    background-color: @yellow;
+  }
+
+  &._active &__button:hover {
+    background-color: @white;
+  }
+
+}
