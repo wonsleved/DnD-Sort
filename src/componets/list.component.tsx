@@ -5,7 +5,7 @@ import IItem from "../models/IItem";
 import loadList from "../utils/loadList";
 import ListItem from "./list-item.component";
 
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { TouchBackend } from 'react-dnd-touch-backend';
 import { DndProvider } from 'react-dnd'
 
 const List: FC = (): ReactElement => {
@@ -56,8 +56,12 @@ const List: FC = (): ReactElement => {
             }),);
     }
 
+    const options = {
+        enableMouseEvents: true,
+    }
+
     return (
-        <DndProvider backend={HTML5Backend}>
+        <DndProvider backend={TouchBackend} options={options}>
             <div className="list">
                 {viewList}
             </div>

@@ -32,6 +32,7 @@ const ListItem: FC<PropsType> = ({item, index, changeActive, moveItem}): ReactEl
             }
         },
         hover(item: DragItem, monitor) {
+            console.log('hover')
             if (!ref.current) {
                 return;
             }
@@ -75,7 +76,6 @@ const ListItem: FC<PropsType> = ({item, index, changeActive, moveItem}): ReactEl
         }),
     })
 
-    const opacity: number = isDragging ? 0 : 1;
     drag(drop(ref));
 
     function clickHandler(event: React.MouseEvent) {
@@ -85,9 +85,11 @@ const ListItem: FC<PropsType> = ({item, index, changeActive, moveItem}): ReactEl
 
     return (
         <div
-            ref={ref} style={{ opacity }} data-handler-id={handlerId}
+            ref={ref} data-handler-id={handlerId}
             className={`list__item list-item 
-            ${(item.active ? " _active" : "")}`}
+            ${(item.active ? "_active" : "")} 
+            ${(isDragging ? "_drag" : "")}
+            `}
         >
             <p className="list-item__info">{item.name}</p>
             <button

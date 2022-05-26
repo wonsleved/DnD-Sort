@@ -13,9 +13,15 @@
   background-color: @white;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: grab;
 
   &._active {
     background-color: @yellow;
+  }
+
+  &._drag {
+    opacity: 0.5;
+    cursor: grabbing;
   }
 
   @media screen and (max-width: 500px) {
